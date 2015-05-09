@@ -26,11 +26,11 @@ E.g: If your page's url is like `http://someurl/?page=xx` , so you need to put '
 Or your url is like `http://someurl/news/id/xx`, you need to put `http://someurl/news/id/`.
 
 ### first (String) (Optional)
-First page link's string, default '<<'.
+First page link's string, default `<<`.  
 If you don't need this, set it to an empty string `''`;
 
 ### last (String) (Optional)
-Last page link's string, default '>>'.
+Last page link's string, default `>>`.  
 If you don't need this, set it to an empty string `''`;
 
 ### prev (String) (Optional)
