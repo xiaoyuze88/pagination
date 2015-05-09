@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="pagination-wrapper"></div>
+    <script src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../src/pagination-bootstrap3.js"></script>
+    <script>
+    var parsedUrl = parse_url(location.href);
+
+    var page = parsedUrl.query.page;
+
+    $(".pagination-wrapper").pagination({
+        currentPage: page,
+        totalPage: 100,
+        url: '?page='
+    });
+
+    // Just for showing page change in demo
+    function parse_url(url) {
+        var url_array = url.match(/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/);
+
+        if (!url_array) return null;
+
+        var uri = {
+            'href': url_array['0'],
+            'protocol': url_array['1'],
+            'slash': url_array['2'],
+            'host': url_array['3'],
+            'port': url_array['4'],
+            'path_name': url_array['5'],
+            'query': parse_query(url_array['6']),
+            'hash': url_array['7']
+        }
+
+        function parse_query(query) {
+            if (!query) return;
+
+            var querys = query.split("&");
+            var _cache,
+                res = {};
+            querys.forEach(function(query, index) {
+                _cache = query.split("=");
+                res[_cache[0]] = _cache[1];
+            })
+
+            return res;
+        }
+        return uri;
+    }
+    </script>
+</body>
+
+</html>
