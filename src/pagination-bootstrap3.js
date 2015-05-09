@@ -51,7 +51,7 @@
         option.currentPage = parseInt(option.currentPage, 10);
 
         if (!option.currentPage || isNaN(option.currentPage)) {
-            option.currentPage = option.currentPage;
+            option.currentPage = 1;
         }
         else if (option.currentPage > option.totalPage) {
             option.currentPage = option.totalPage;
