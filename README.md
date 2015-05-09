@@ -34,10 +34,12 @@ Last page link's string, default `>>`.
 If you don't need this, set it to an empty string `''`;
 
 ### prev (String) (Optional)
-Prev page link's string, default `<`.
+Prev page link's string, default `<`.  
+If you don't need this, set it to an empty string `''`;
 
 ### next (String) (Optional)
-Next page link's string, default `<`.
+Next page link's string, default `<`.  
+If you don't need this, set it to an empty string `''`;
 
 ### visiblePageNum (Number) (Optional)
 Deside how many pages' link should be shown. Default `4`.

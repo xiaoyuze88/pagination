@@ -68,13 +68,13 @@
 
         html += '<ul class="pagination">';
 
-        var firstPageLink, prevPageLink, 
+        var firstPageLink, prevPageLink,
             lastPageLink, nextPageLink,
             firstLinkClass = '',
             lastLinkClass = '';
-            
 
-        if(option.currentPage > 1) {
+
+        if (option.currentPage > 1) {
             firstPageLink = option.url + 1;
             prevPageLink = option.url + (option.currentPage - 1);
         }
@@ -82,8 +82,8 @@
             firstPageLink = prevPageLink = disabledUrlString;
             firstLinkClass = disabledClassString;
         }
-        
-        if(option.currentPage < option.totalPage) {
+
+        if (option.currentPage < option.totalPage) {
             lastPageLink = option.url + option.totalPage;
             nextPageLink = option.url + (option.currentPage + 1);
         }
@@ -95,7 +95,7 @@
 
         // if need to show first page link
         if (option.first) {
-            html += '<li'+firstLinkClass+'>' +
+            html += '<li' + firstLinkClass + '>' +
                 '<a href="' + firstPageLink + '" title="First Page">' +
                 '<span>' + option.first + '</span>' +
                 '</a>' +
@@ -103,12 +103,13 @@
         }
 
         // prev page button
-        html += '<li'+firstLinkClass+'>' +
-            '<a href="' + prevPageLink + '">' +
-            '<span>' + option.prev + '</span>' +
-            '</a>' +
-            '</li>';
-
+        if (option.prev) {
+            html += '<li' + firstLinkClass + '>' +
+                '<a href="' + prevPageLink + '">' +
+                '<span>' + option.prev + '</span>' +
+                '</a>' +
+                '</li>';
+        }
 
         if (option.currentPage > option.visiblePageNum) {
             html += '<li>' +
@@ -126,8 +127,8 @@
                 '</li>';
         }
 
-        for (var i = option.currentPage - option.visiblePageNum + 1; 
-            i < option.currentPage + option.visiblePageNum; i++) {
+        for (var i = option.currentPage - option.visiblePageNum + 1;
+                i < option.currentPage + option.visiblePageNum; i++) {
 
             if (i <= 0 || i > option.totalPage) continue;
 
@@ -156,15 +157,15 @@
         }
         if (option.totalPage - option.currentPage > option.visiblePageNum - 1) {
             html += '<li>' +
-                    '<a href="' + option.url + option.totalPage + '">' +
-                    '<span>' + option.totalPage + '</span>' +
-                    '</a>' +
-                    '</li>';
+                '<a href="' + option.url + option.totalPage + '">' +
+                '<span>' + option.totalPage + '</span>' +
+                '</a>' +
+                '</li>';
         }
 
         // if need to show last page button
         if (option.last) {
-            html += '<li'+lastLinkClass+'>' +
+            html += '<li' + lastLinkClass + '>' +
                 '<a href="' + lastPageLink + '">' +
                 '<span>' + option.last + '</span>' +
                 '</a>' +
@@ -172,12 +173,13 @@
         }
 
         // next page button
-        html += '<li'+lastLinkClass+'>' +
-            '<a href="' + nextPageLink + '" title="Last page">' +
-            '<span>' + option.next + '</span>' +
-            '</a>' +
-            '</li>';
-
+        if (option.next) {
+            html += '<li' + lastLinkClass + '>' +
+                '<a href="' + nextPageLink + '" title="Last page">' +
+                '<span>' + option.next + '</span>' +
+                '</a>' +
+                '</li>';
+        }
         html += '</ul>';
         return html;
     };
