@@ -1,5 +1,5 @@
 # pagination
-Simple pagination Bootstrap 3 plugin, helps to generate the BoosStrap's pagination dynamical.
+Simple pagination Bootstrap 3 plugin, helps to generate the BoosStrap's pagination dynamically.
 
 ## USAGE
 
