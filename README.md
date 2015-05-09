@@ -4,7 +4,7 @@ Simple pagination Bootstrap 3 plugin, helps to generate the BoosStrap's paginati
 ## USAGE
 
 #### First
-Since we depend on BootStrap3, you should include Jquery and Bootstrap first, then include `pagination-bootstrap3.js` in your HTML file.
+Since we depend on BootStrap3, you should include Jquery and Bootstrap first, then include `bootstrap-pagination.js` in your HTML file.
 
 #### Then
 Use it like any other BootStrap pluggin:  
