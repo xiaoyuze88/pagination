@@ -178,6 +178,7 @@
             '</a>' +
             '</li>';
 
+        html += '</ul>';
         return html;
     };
 
